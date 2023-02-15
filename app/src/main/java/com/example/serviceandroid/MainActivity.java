@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
         stops = (Button) findViewById(R.id.stops);
 
         start.setOnClickListener(v -> {
+            Song song = new Song("Title", "Minh", R.drawable.musicimage, R.raw.filemusic);
+
             Intent intent = new Intent(this, MyService.class);
-            intent.putExtra("key", editText.getText().toString());
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("song", song);
+            intent.putExtras(bundle);
+
             startService(intent);
         });
 
