@@ -8,16 +8,12 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 public class MyApplication extends Application {
-
     public static final String CHANNEL_ID = "loadDataServiceChannel";
-
 
     @Override
     public void onCreate() {
         super.onCreate();
-
         createNotificationChannel();
-
     }
 
     private void createNotificationChannel(){
